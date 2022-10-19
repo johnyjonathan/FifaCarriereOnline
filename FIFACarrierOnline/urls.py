@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from FIFACarrierApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.helloView, name="helloView"),
+    path('main', views.mainView, name="mainView")
 ]

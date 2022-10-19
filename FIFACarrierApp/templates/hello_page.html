@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="d-flex justify-content-center mt-5 ">
+<div class="col-md-8">
+    <center> 
+    <h1> Hello in the FIFA Carrier Mode World </h1>
+       <h3> Let's start! </h3> 
+    </center>
+    <div class="text-center mt-4">
+    <button type="button" class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">Sign in</button>
+    <button type="button" class="btn btn-outline-secondary">Sign up</button>
+    </div>
+    <div class="collapse mt-5 row justify-content-center" id="collapseSignIn">
+        
+        <div class="card card-body">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">User name</label>
+                  <input type="text" class="form-control" name="user_name" >
+                  {% if error %}
+                  <div id="userHelp" class="form-text"><p class="text-danger">{{error}}</p></div>
+                  {% endif %}
+                </div>
+                <div class="mb-3">
+                  <label for="InputLoginPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="InputLoginPassword" name="login_password">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Sign in" name="sign_in">
+              </form>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
