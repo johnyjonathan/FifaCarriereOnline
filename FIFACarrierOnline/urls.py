@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from FIFACarrierApp import views
+from FIFACarrierApp import json_requests
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.helloView, name="helloView"),
-    path('main', views.mainView, name="mainView")
+    path('main', views.mainView, name="mainView"),
+    path('playerSearch/', json_requests.playerSearch , name="playerSearch"),
 ]
