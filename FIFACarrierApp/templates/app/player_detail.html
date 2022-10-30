@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container bg-dark bg-gradient text-light shadow rounded  mt-5">
+
+    <div class="d-flex justify-content-start mt-5 pt-4 px-4 pb-4">
+        <div class="row w-100">
+            <div class="col-10">
+                <div class="d-inline">
+                    <span class="fs-1">{{ player_info.long_name }}</span>
+                </div>
+                <div class="d-inline">
+                    <img src="{{player_info.club_flag_url}}" class="mx-2 mb-3" width="40px" height="30px">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-2">
+                    <img src="{{player_info.player_face_url}}" class="img-fluid ms-2">
+                </div>
+                <div class="col-4">
+                    <div class="row mt-3 ms-n4">
+                        <div class="col-2">
+                            <img src="{{player_info.club_logo_url}}" width="50px" height="50px">
+                        </div>
+                        <div class="col-10 mt-1 ms-n2">
+                            <span class="fs-3">{{ player_info.club_name }}</span>
+                        </div>
+                    </div>
+                    <div class="row mt-3 ms-2">
+                        <div class="col-5">
+                            <span class="fs-5"><b>Contract until:</b> {{player_info.club_contract_valid_until}} </span>
+                        </div>
+                        <div class="col-3">
+                            <span class="fs-5"><b>Age:</b> {{player_info.age}} </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row mt-4">
+                        <div class="col-5 mt-2">
+                            <span class="fs-5"><b>Overall</b></span> 
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-light btn-lg ms-3 mb-1" disabled>{{player_info.overall}}</button>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-5 mt-2">
+                            <span class="fs-5"><b>Potential</b></span>  
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-light btn-lg ms-3 mb-1" disabled>{{player_info.potential}}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 ms-4 mt-1">
+                    <div class="row mt-4">
+                        <span class="fs-4"><b>Positions</b></span>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-10">
+                            {% for position in positions %}
+                            <div class="d-inline">
+                            <button type="button" class="btn btn-light mb-1 me-1" disabled>{{position}}</button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
