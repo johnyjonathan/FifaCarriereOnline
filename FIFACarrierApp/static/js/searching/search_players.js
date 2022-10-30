@@ -4,10 +4,10 @@ let searchInput = document.getElementById("search_players_input");
 let results = document.getElementById("search_player_result");
 let csrf = document.getElementsByName("csrfmiddlewaretoken")[0].value;
 
-const sendSearchData = (player_name) => {
+const sendSearchData = (player_name, url) => {
     $.ajax({
         type: 'POST',
-        url: 'playerSearch/',
+        url: url,
         data: {
             'csrfmiddlewaretoken': csrf,
             'player_name': player_name,
@@ -20,6 +20,7 @@ const sendSearchData = (player_name) => {
                 results.innerHTML = "";
                 data.forEach(player=>{
                 results.innerHTML += `
+                <a href="/players/${player.pk}" style="text-decoration: none; color: inherit;">
                 <div class="row justify-content-start mt-2 mb-2">
                 <div class="col-2">
                     <img src="${player.player_face_url}" class="img-fluid">
@@ -43,10 +44,7 @@ const sendSearchData = (player_name) => {
                 ${player.age}
               </button>
                 </div>
-                
-                
-                
-                </div>`;
+                </div></a>`;
                 });
             }else{
                 if (searchInput.value.length > 0){
@@ -66,5 +64,5 @@ searchInput.addEventListener('keyup', e=>{
     if (results.classList.contains("not-visible")){
         results.classList.remove("not-visible");
     }
-    sendSearchData(e.target.value);
+    sendSearchData(e.target.value, url);
 });

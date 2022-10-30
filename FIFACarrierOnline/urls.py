@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.helloView, name="helloView"),
     path('main', views.mainView, name="mainView"),
     path('playerSearch/', json_requests.playerSearch , name="playerSearch"),
+    path('players/<int:pk>', views.PlayerDetailView, name="PlayerDetailView"),
 ]
