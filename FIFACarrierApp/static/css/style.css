@@ -21,3 +21,44 @@
  .ms-n5 {
     margin-left: -3rem !important;
   }
+
+
+  .btn-50{
+    background-color: #e9573e;
+
+  }
+
+  .badge {
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+.badge.position, .badge.rating {
+  padding: .4rem;
+  font-weight: 400;
+  font-size: .85rem;
+  vertical-align: top;
+}
+
+.cf, .lcf, .lf, .ls, .lw, .rcf, .rf, .rs, .rw, .st {
+  background: #4b89dc;
+}
+
+.cam, .cdm, .cm, .lam, .lcam, .lcdm, .lcm, .ldm, .lm, .lwm, .ram, .rcam, .rcdm, .rcm, .rdm, .rm, .rwm {
+  background: #8dc153;
+}
+
+.cb, .lb, .lcb, .lwb, .rb, .rcb, .rwb, .sw {
+  background: #f6bb43;
+}
+
+.gk .sub {
+  background: #e9573e;
+}

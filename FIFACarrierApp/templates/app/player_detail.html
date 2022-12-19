@@ -70,6 +70,100 @@
                 </div>
 
             </div>
+        <div class="row w-100 mt-5">
+            <div class="col-4 text-light mt-3">
+                <div class="card px-1 py-1">
+                    <h5 class="card-headr px-3 py-1 bg-dark shadow rounded">Player info </h5>
+                    <div class="card-body w-100 bg-light bg-gradient text-dark">
+                        <div class="row w-100">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Height:</b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="fs-6 text-end">{{player_info.height_cm}} cm</span>
+                            </div>
+                        </div>
+                        <div class="row w-100 mt-2">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Weight:</b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="fs-6 text-end">{{player_info.weight_kg}} kg</span>
+                            </div>
+                        </div>
+                        <div class="row w-100 mt-2">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Foot: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="fs-6 text-end">{{player_info.preferred_foot}}</span>
+                            </div>
+                        </div>
+                        <div class="row w-100 mt-2">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Birth: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="fs-6 text-end">{{player_info.dob}}</span>
+                            </div>
+                        </div>
+                    
+                        <div class="row w-100 mt-2">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Age: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="fs-6 text-end">{{player_info.age}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row w-100 mt-3">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Positions: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <span class="badge position" id="player_position"> {{player_info.club_position}} </span>
+                            </div>
+                        </div>
+
+                        <div class="row w-100 mt-3">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Skill moves: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="hidden" value="{{player_info.skill_moves}}" id="player_skill">
+                                <span class="stars" id="skill_stars"></span>
+                            </div>
+                        </div>
+
+                        <div class="row w-100 mt-3">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Weak foot: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="hidden" value="{{player_info.weak_foot}}" id="player_foot">
+                                <span class="stars" id="foot_stars"></span>
+                            </div>
+                        </div>
+                        <div class="row w-100 mt-3">
+                            <div class="col-6">
+                                <span class="fs-6"><b>Value: </b></span>
+                            </div>
+                            <div class="col-6 text-end">
+                                {% comment %} <span>&#8364;</span> {% endcomment %}
+                                <span class="fs-6 text-end" id="player_value">{{player_info.value_eur}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        
+
+        
+        
+        </div>
     </div>
 
 </div>
